@@ -1,0 +1,412 @@
+/* ============================================================
+   AGS — Aesthetic Genome Design System · Colors + Type
+   物質本真美學設計系統
+   v5.0 Stilla Edition · WOFF2 web-optimised
+   ============================================================ */
+
+/* -----  FIVE INSTRUMENTS · local brand fonts  ----- */
+/* All canonical AGS typefaces load from /fonts as WOFF2. Yu Gothic Light @font-face removed (Microsoft license, not redistributable) — system fallback chain in --font-jp-breath handles it. */
+
+@font-face {
+  font-family: 'Swei Sans CJK TC Thin';
+  src: url('./fonts/____SC-Thin.woff2') format('woff2');
+  font-weight: 300; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Swei Sans CJK';
+  src: url('./fonts/____Swei_Sans_CJK_SC.woff2') format('woff2');
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'LINER';
+  src: url('./fonts/LINER___.woff2') format('woff2');
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Maia';
+  src: url('./fonts/Maia.woff2') format('woff2');
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+/* Yu Gothic Light intentionally not bundled (Microsoft license). System fallback used in --font-jp-breath. */
+/* Noto Sans CJK TC — full weight range (ZH Structure) */
+@font-face { font-family: 'Noto Sans TC'; src: url('./fonts/NotoSansCJKtc-Thin.woff2') format('woff2'); font-weight: 100; font-display: swap; }
+@font-face { font-family: 'Noto Sans TC'; src: url('./fonts/NotoSansCJKtc-Light.woff2') format('woff2'); font-weight: 300; font-display: swap; }
+@font-face { font-family: 'Noto Sans TC'; src: url('./fonts/NotoSansCJKtc-Regular.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'Noto Sans TC'; src: url('./fonts/NotoSansCJKtc-Medium.woff2') format('woff2'); font-weight: 500; font-display: swap; }
+@font-face { font-family: 'Noto Sans TC'; src: url('./fonts/NotoSansCJKtc-Bold.woff2') format('woff2'); font-weight: 700; font-display: swap; }
+/* GenJyuu Gothic — JP breath reinforcement */
+@font-face { font-family: 'GenJyuuGothic'; src: url('./fonts/GenJyuuGothic-Light.woff2') format('woff2'); font-weight: 300; font-display: swap; }
+@font-face { font-family: 'GenJyuuGothic'; src: url('./fonts/GenJyuuGothic-Regular.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+/* Noto Sans Hant (Taiwanese variant) — alt. zh-structure */
+@font-face { font-family: 'Noto Sans Hant'; src: url('./fonts/NOTOSANSHANT-LIGHT.woff2') format('woff2'); font-weight: 300; font-display: swap; }
+@font-face { font-family: 'Noto Sans Hant'; src: url('./fonts/NOTOSANSHANT-REGULAR.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'Noto Sans Hant'; src: url('./fonts/NOTOSANSHANT-MEDIUM.woff2') format('woff2'); font-weight: 500; font-display: swap; }
+@font-face { font-family: 'Noto Sans Hant'; src: url('./fonts/NOTOSANSHANT-BOLD.woff2') format('woff2'); font-weight: 700; font-display: swap; }
+
+:root {
+  /* ==========================================================
+     COLOR — Lost Maxi.Art v2.1 Stilla-Iris constraint palette
+     composition proportion 80/15/5 · layout rule, not visible text
+     ========================================================== */
+
+  /* -- Core (Stilla-Iris-led) -- */
+  --stilla-iris:        #8384BD;   /* 碇紫鳶尾 · primary · bivalent cool/accent */
+  --stilla-iris-print:  #7D7EB2;   /* U (print) tone */
+  --stilla-iris-dim:    #6F71A7;   /* pressed / active */
+  --stilla-iris-bright: #9EA0C9;   /* hover / focus ring */
+  --stilla-iris-wash:   #ECECF4;   /* tint surface · 10% overlay */
+  --stilla-iris-ink:    #3C3D5A;   /* deep text over wash */
+
+  /* -- Accent triad (the 15% jump colors) -- */
+  --yellow-115:         #FDDA25;   /* high-priority signal */
+  --yellow-115-print:   #FFDE2C;
+  --green-389:          #D0DF00;   /* fresh electric lime */
+  --green-389-print:    #D2DF00;
+  --green-390:          #B5BD00;   /* grounded olive shift */
+
+  /* -- Structural neutrals (the 80% backbone) -- */
+  --black-6:            #101820;   /* primary ink */
+  --black-6-print:      #2D2926;
+  --cool-gray-10:       #63666A;   /* secondary ink */
+  --cool-gray-6:        #8C8E92;   /* tertiary ink */
+  --cool-gray-3:        #B4B5B8;   /* divider */
+  --cool-gray-1:        #D9D9D6;   /* subtle border */
+  --paper:              #F6F6F4;   /* warm off-white canvas */
+  --paper-ink:          #FAFAF8;   /* lifted surface */
+  --white:              #FFFFFF;   /* pure ground */
+
+  /* -- Semantic (ε system family) -- */
+  --semantic-info:      #8384BD;
+  --semantic-success:   #5A8F3E;
+  --semantic-warning:   #FDDA25;
+  --semantic-danger:    #C03B2B;
+  --semantic-neutral:   #63666A;
+
+  /* -- Foreground scale (use these, not raw hex) -- */
+  --fg-1:               var(--black-6);        /* titles, headlines */
+  --fg-2:               #2A2F38;                /* body */
+  --fg-3:               var(--cool-gray-10);    /* captions, meta */
+  --fg-4:               var(--cool-gray-6);     /* placeholder */
+  --fg-disabled:        var(--cool-gray-3);
+  --fg-inverse:         var(--white);
+  --fg-accent:          var(--stilla-iris);
+  --fg-ink-on-accent:   var(--black-6);         /* CTA policy: DARK text on purple */
+
+  /* -- Background scale -- */
+  --bg-1:               var(--paper);           /* page ground */
+  --bg-2:               var(--paper-ink);       /* card / sheet */
+  --bg-3:               var(--white);           /* lifted element */
+  --bg-wash:            var(--stilla-iris-wash);
+  --bg-accent:          var(--stilla-iris);
+  --bg-ink:             var(--black-6);         /* dark sheet */
+
+  /* -- Border / hairline -- */
+  --hairline:           var(--cool-gray-1);
+  --divider:            var(--cool-gray-3);
+  --border-strong:      var(--black-6);
+
+  /* ==========================================================
+     TYPOGRAPHY — Five Instruments (AGS canonical)
+     ========================================================== */
+
+  /* Five fixed typefaces — density gradient:
+     獅尾Thin ── Yu Gothic Light ── Noto Sans 400 ── LINER ── Maia
+     極度克制    輕                  中性              均一       有機   */
+  --font-zh-structure:    'Noto Sans TC', 'Noto Sans Hant', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+  --font-zh-character:    'Swei Sans CJK TC Thin', 'Noto Sans TC', 'PingFang TC', sans-serif;
+  --font-en-engineering:  'LINER', ui-monospace, 'IBM Plex Mono', monospace;
+  --font-emotion:         'Maia', 'Brush Script MT', cursive;
+  --font-jp-breath:       'Yu Gothic', 'GenJyuuGothic', '游ゴシック', sans-serif;
+  --font-serif:           'Songti TC', 'STSong', serif;
+
+  /* -- Weight scale (available within the palette) -- */
+  --w-thin:    300;
+  --w-regular: 400;
+  --w-medium:  500;
+  --w-bold:    700;
+  --w-black:   900;
+
+  /* -- Scale ratios (choose per family) -- */
+  --scale-minor-third:   1.25;
+  --scale-perfect-fourth:1.333;   /* α β default */
+  --scale-perfect-fifth: 1.5;
+  --scale-golden:        1.618;   /* δ luxury */
+
+  /* -- Fluid size scale (responsive clamp) -- */
+  --fs-xs:    0.75rem;   /* 12 */
+  --fs-sm:    0.875rem;  /* 14 */
+  --fs-base:  1rem;      /* 16 */
+  --fs-md:    1.125rem;  /* 18 */
+  --fs-lg:    1.333rem;  /* 21 */
+  --fs-xl:    1.777rem;  /* 28 */
+  --fs-2xl:   2.369rem;  /* 38 */
+  --fs-3xl:   3.157rem;  /* 50 */
+  --fs-4xl:   clamp(3rem, 6vw, 5.2rem);
+
+  /* -- Line-heights (bilingual topology) -- */
+  --lh-zh:    1.8;   /* square blocks need breath */
+  --lh-en:    1.4;   /* proportional latin */
+  --lh-tight: 1.15;  /* display headlines */
+  --lh-loose: 2.0;   /* editorial pull-quotes */
+
+  /* -- Tracking -- */
+  --tr-tight:   -0.01em;
+  --tr-normal:  0;
+  --tr-zh:      0.05em;      /* ZH body breathing */
+  --tr-en:      0.02em;
+  --tr-eng-cap: 0.12em;      /* engineering uppercase labels */
+  --tr-extreme: 0.4em;       /* η anti-algorithm */
+
+  /* -- Bilingual system -- */
+  --bilingual-gap:        0.25em;  /* CJK/Latin interstice */
+  --bilingual-size-ratio: 0.85;    /* EN = 85% of ZH in primary-secondary */
+
+  /* ==========================================================
+     SPACE — 8px grid · base_unit=8 (α β δ ε ζ γ), 4 (ζ η)
+     ========================================================== */
+  --s-0:    0;
+  --s-0_5:  2px;
+  --s-1:    4px;
+  --s-2:    8px;
+  --s-3:    12px;
+  --s-4:    16px;
+  --s-5:    24px;
+  --s-6:    32px;
+  --s-7:    48px;
+  --s-8:    64px;
+  --s-9:    96px;
+  --s-10:   128px;
+
+  /* -- Radii (family-tuned) -- */
+  --r-0:    0;        /* α δ η · sharp */
+  --r-1:    2px;      /* β */
+  --r-2:    4px;      /* ε */
+  --r-3:    8px;      /* γ */
+  --r-4:    12px;     /* ζ */
+  --r-pill: 999px;
+
+  /* -- Elevation (atmospheric · α β) -- */
+  --shadow-0:  none;
+  --shadow-1:  0 1px 0 rgba(16, 24, 32, 0.04);
+  --shadow-2:  0 1px 2px rgba(16, 24, 32, 0.06), 0 1px 0 rgba(16, 24, 32, 0.03);
+  --shadow-3:  0 4px 14px rgba(16, 24, 32, 0.08);
+  --shadow-4:  0 12px 28px rgba(16, 24, 32, 0.12);
+  --shadow-inset: inset 0 0 0 1px rgba(16, 24, 32, 0.06);
+
+  /* Structural shadow for γ (more geometric, cooler cast) */
+  --shadow-struct: 0 8px 24px -6px rgba(131, 132, 189, 0.35);
+  /* Tenebrism for δ (luxury, deep contrast) */
+  --shadow-tenebrism: 0 24px 60px -20px rgba(16, 24, 32, 0.55);
+
+  /* ==========================================================
+     MOTION
+     ========================================================== */
+  --dur-instant: 80ms;
+  --dur-fast:    180ms;
+  --dur-base:    280ms;
+  --dur-slow:    500ms;
+  --dur-glacial: 1200ms;
+
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --ease-entrance: cubic-bezier(0, 0, 0, 1);
+  --ease-exit:     cubic-bezier(0.4, 0, 1, 1);
+  --ease-kando:    cubic-bezier(0.19, 1, 0.22, 1);   /* β */
+  --ease-linear:   linear;                           /* η */
+  --ease-spring:   linear(0, 0.04, 0.15, 0.32, 0.55, 0.77, 0.94, 1.04, 1.08, 1.05, 1.01, 0.99, 1);
+
+  /* ==========================================================
+     Z-INDEX
+     ========================================================== */
+  --z-base: 0;
+  --z-raised: 10;
+  --z-sticky: 100;
+  --z-overlay: 1000;
+  --z-modal: 2000;
+  --z-toast: 3000;
+}
+
+/* ==============================================================
+   SEMANTIC TYPE STYLES — use these, not raw variables
+   ============================================================== */
+
+/* -- Root bilingual defaults -- */
+html {
+  font-family: var(--font-zh-structure);
+  font-size: 16px;
+  color: var(--fg-1);
+  background: var(--bg-1);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-zh-structure);
+  font-weight: var(--w-regular);
+  line-height: var(--lh-zh);
+  letter-spacing: var(--tr-zh);
+}
+
+/* -- Latin segments inside ZH -- */
+[lang="en"], :lang(en), .en {
+  font-family: var(--font-en-engineering);
+  line-height: var(--lh-en);
+  letter-spacing: var(--tr-en);
+  margin-inline: var(--bilingual-gap);
+}
+
+[lang="ja"], :lang(ja) {
+  font-family: var(--font-jp-breath);
+  font-weight: var(--w-thin);
+  line-height: 1.7;
+}
+
+/* -- Display / Heading scale -- */
+.display, h1.display {
+  font-family: var(--font-zh-character);
+  font-weight: var(--w-thin);
+  font-size: var(--fs-4xl);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tr-tight);
+  color: var(--fg-1);
+}
+
+h1 {
+  font-family: var(--font-zh-character);
+  font-weight: var(--w-thin);
+  font-size: var(--fs-3xl);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tr-tight);
+  color: var(--fg-1);
+  margin: 0 0 var(--s-5);
+}
+
+h2 {
+  font-family: var(--font-zh-character);
+  font-weight: var(--w-regular);
+  font-size: var(--fs-2xl);
+  line-height: 1.25;
+  letter-spacing: var(--tr-tight);
+  color: var(--fg-1);
+  margin: 0 0 var(--s-4);
+}
+
+h3 {
+  font-family: var(--font-zh-structure);
+  font-weight: var(--w-medium);
+  font-size: var(--fs-xl);
+  line-height: 1.35;
+  color: var(--fg-1);
+  margin: 0 0 var(--s-3);
+}
+
+h4 {
+  font-family: var(--font-zh-structure);
+  font-weight: var(--w-medium);
+  font-size: var(--fs-lg);
+  line-height: 1.45;
+  color: var(--fg-1);
+  margin: 0 0 var(--s-3);
+}
+
+h5, h6 {
+  font-family: var(--font-en-engineering);
+  font-weight: var(--w-regular);
+  font-size: var(--fs-sm);
+  text-transform: uppercase;
+  letter-spacing: var(--tr-eng-cap);
+  color: var(--fg-3);
+  margin: 0 0 var(--s-2);
+}
+
+p {
+  font-family: var(--font-zh-structure);
+  font-weight: var(--w-regular);
+  font-size: var(--fs-base);
+  line-height: var(--lh-zh);
+  letter-spacing: var(--tr-zh);
+  color: var(--fg-2);
+  margin: 0 0 var(--s-4);
+  text-wrap: pretty;
+}
+
+small, .caption {
+  font-size: var(--fs-sm);
+  color: var(--fg-3);
+  line-height: 1.5;
+}
+
+.eyebrow {
+  font-family: var(--font-en-engineering);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--tr-eng-cap);
+  color: var(--fg-3);
+}
+
+.emotion {
+  font-family: var(--font-emotion);
+  font-weight: var(--w-regular);
+  letter-spacing: 0.01em;
+}
+
+code, pre, kbd, samp, .mono {
+  font-family: var(--font-en-engineering);
+  font-size: 0.95em;
+  letter-spacing: 0;
+}
+
+pre {
+  background: var(--bg-2);
+  border: 1px solid var(--hairline);
+  padding: var(--s-4);
+  line-height: 1.55;
+  overflow-x: auto;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--hairline);
+  margin: var(--s-6) 0;
+}
+
+a {
+  color: var(--fg-1);
+  text-decoration: underline;
+  text-decoration-color: var(--stilla-iris);
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 1px;
+  transition: text-decoration-thickness var(--dur-fast) var(--ease-standard);
+}
+a:hover { text-decoration-thickness: 2px; }
+
+/* -- Bilingual mode classes -- */
+.bilingual-primary-secondary .zh {
+  font-family: var(--font-zh-character);
+  font-weight: var(--w-thin);
+}
+.bilingual-primary-secondary .en {
+  font-family: var(--font-en-engineering);
+  font-size: calc(1em * var(--bilingual-size-ratio));
+  color: var(--fg-3);
+  text-transform: uppercase;
+  letter-spacing: var(--tr-eng-cap);
+  display: block;
+  margin-top: 0.25em;
+}
+
+.bilingual-juxtapose {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--s-5);
+  align-items: baseline;
+}
+.bilingual-juxtapose .zh { font-family: var(--font-zh-character); text-align: left; }
+.bilingual-juxtapose .en { font-family: var(--font-en-engineering); text-align: right; color: var(--fg-3); }
+
+.bilingual-fusion { text-autospace: ideograph-alpha ideograph-numeric; }
+.bilingual-fusion .accent { font-family: var(--font-emotion); color: var(--stilla-iris); }
+
+/* -- Reduced motion -- */
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
