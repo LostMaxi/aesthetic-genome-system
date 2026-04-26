@@ -1,5 +1,49 @@
 # AGS Changelog
 
+## v5.0.1 · Anti-divergence patch · 2026-04-26 (later same day)
+
+### Why this patch
+
+First flagship build attempt (Drop 05 · Hall) exposed three agent-side divergences when AGS context was rich but family-canonical defaults were not explicit:
+- agent suggested **C · Fusion** bilingual mode for α Restrained (canonical is A · Hierarchy)
+- agent suggested **Hidden Quiet Section** for atelier surface (signature for atelier is Visible)
+- agent narrowed **Static UI kit scope** to "Modals & sheets only" (should default to ALL components for flagship showcases)
+
+These are not bugs but agent's "creative interpretation" of Hall context. v5.0.1 adds explicit anti-divergence locks so future runs default correctly without requiring user override.
+
+### Added
+
+- `SKILL.md` — new "Family-canonical defaults" section with full table covering Bilingual / Layout / Camera Motion / Tonal Accents / Quiet Section / Radii / Speed for all seven families
+- `SKILL.md` — three explicit anti-divergence locks: C Fusion = η only / Hidden Quiet = ε ζ only / Static UI kit defaults to ALL components
+- `SKILL.md` — Chinese forbidden-words list added to Hard constraints (賦能 / 打造 / 極致 / 嶄新 / 全新 / 重新定義 / 引領 / 革命性 / 顛覆 / 一站式 / 沉浸式體驗 / 匠心 / 精雕細琢 / 引爆)
+- `SKILL.md` — activation keywords expanded: "Capsule Reveal", "Drop", "Atelier"
+- `README.md` — new section "Atelier Drop series — material continuity" documenting Drop 02 FIELD STILL · 水晶 / Drop 03 SUBMERSE · 炭岩石片 + 鳶尾 / Drop 04 Theia Apex · 月球橄欖石球 + material trajectory rules
+- `README.md` — Chinese forbidden-words list added (parallel to en list)
+- `kit-dimensions.md` — Family-canonical defaults table mirrored from SKILL.md
+- `kit-dimensions.md` — Hall sub-flavor upgraded: primary aesthetic aspiration changed from Sofia Coppola/abandoned industrial to **Denis Villeneuve** (Blade Runner 2049 / Arrival / Dune / Sicario) + specific film anchors (BR2049 / Oblivion / Man of Steel)
+
+### Removed (broken file references)
+
+Previous v5.0 docs referenced files that were never bundled in the v5.0 push:
+- `source/families/{family}.json` × 7 — not bundled
+- `source/families.md`, `source/ctsm-parameters.md`, `source/bilingual-typography.md`, `source/SKILL.md`, `source/README.md`, `source/package.json` — not bundled
+- `ui_kits/explorer/` — not bundled
+- `preview/` (preview cards) — not bundled
+- `assets/` (logo SVG, grid pattern) — not bundled
+- `fonts/README.md` — not bundled
+
+These references were causing agent to attempt loading files that don't exist, then fall back to hallucinated defaults. **All references replaced with inline documentation** of the same information (Family-canonical defaults table, in-README visual foundations section).
+
+### Reframed
+
+- `SKILL.md` workflow step 1: "Load `source/families/{family}.json`" → "Use the family's canonical defaults (see Family-canonical defaults section below)"
+- `README.md` Sources section → renamed "Repo contents", lists what's actually in v5.0
+- `README.md` Index table → updated to reflect actual repo files only
+- `README.md` Quick start: "load JSON from `source/families/`" → "set canonical defaults from SKILL.md Family-canonical defaults table"
+- `kit-dimensions.md` L1 Preset note: "Load `source/families/{family}.json` for full tokens" → "Per-family canonical axis defaults are documented in SKILL.md"
+
+---
+
 ## v5.0 · Stilla Edition · 2026-04-26
 
 ### Removed

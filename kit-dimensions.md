@@ -37,7 +37,7 @@ Intent (header · per-prototype):
 
 ## L1 Preset · DOM aesthetic (Primary Style)
 
-Maps to seven families. Load `source/families/{family}.json` for full tokens.
+Maps to seven families. Per-family canonical axis defaults are documented in SKILL.md's "Family-canonical defaults" table.
 
 | Code | Name | Brand reference | Use when |
 |------|------|----------------|---------|
@@ -90,15 +90,23 @@ When Scene Mode = Cinematic Vista, USER PROMPT specifies one of:
 - Sound: wind, distant resonance
 
 #### Hall
-- Reference: Sofia Coppola Lost in Translation, abandoned industrial
+- **Primary aspiration: Denis Villeneuve** — Blade Runner 2049 / Arrival / Dune / Sicario. Vast monumental architecture, atmospheric density, cool palette with surgical warm accent, slow temporal logic, silence carrying as much weight as image.
+- Specific film anchors:
+  - Blade Runner 2049 (Villeneuve, 2017) — monumental atmospheric architecture, surgical warm-cool contrast, quiet weight
+  - Oblivion (Kosinski, 2013) — geometric precision, cool clean post-collapse monumentality
+  - Man of Steel (Snyder, 2013) — mythic slow-mo, earthly-cosmic scale, monumental gravity
+- Aesthetic DNA: vast scale × atmospheric density × slow temporal logic × silence carrying weight
+- **Hall is a still-functioning monument, not abandonment or decay**
 - toneMappingExposure: 0.95
-- Fog: cool gray `0x202832`, density 0.018
-- Main light: SpotLight × 2-3 from above, hard cones
-- Ground: tiled / concrete / wooden floor surface
-- Particles: dust falling slowly through light shafts
-- god-rays: vertical pillars, opacity 0.35
+- Fog: cool gray-blue `0x202832`, density 0.018-0.022
+- Main light: SpotLight × 2-3 from above, hard warm cones (single warm source against cool ambient)
+- Ground: monumental smooth concrete / bronze plate / weathered stone — geometric architectural mass
+- Particles: dust / mist / haze falling slowly through light shafts
+- god-rays: vertical pillars, opacity 0.30-0.40
 - Bloom: 0.6
-- Sound: contained reverb, distant footstep
+- Sound: contained reverb, sub-bass drone, occasional architectural ping
+- Camera: slow Dynamic dolly with deliberate hold frames
+- **Forbidden**: horror-movie atmospherics, post-apocalyptic decay porn, anime-style spectacle, Ridley-Scott noir-thriller register. Work toward Villeneuve.
 
 #### Liquid
 - Reference: Apichatpong Weerasethakul, underwater
@@ -163,6 +171,26 @@ Agent decides sub-flavor based on context. Default to Lunar if unclear.
 - **Orbit** — circular orbit around subject, scroll = angle
 - **Hover** — subtle drift, no major translation
 - **Dynamic** — multi-keyframe (fly-in + orbit + dolly-back), three-stage cinematic
+
+---
+
+## Family-canonical defaults (anti-divergence locks)
+
+Each family has canonical axis defaults. Use these unless explicitly overridden. **C · Fusion is canonical for η only**; **Hidden Quiet Section is canonical for ε / ζ only**.
+
+| Family | Bilingual | Layout | Camera | Tonal | Quiet | Radii | Speed |
+|--|--|--|--|--|--|--|--|
+| α Restrained | A | Stage / V-Scroll | Linear / Dynamic | 1-2 | **Visible** | 0 | 0.30 |
+| β Kando | A | Multi-Anchor | Hover | 1 | Visible | 2 | 0.40 |
+| γ Organic | B | Vertical Scroll | Dynamic | 1-2 | Visible | 8 | 0.55 |
+| δ Luxury | A | Stage | Hover | 1 | Visible | 0 | 0.15 |
+| ε System | A | Multi-Anchor | Linear | 0 | Hidden | 4 | 0.60 |
+| ζ Dynamic | B | Single Page / Stage | Orbit / Dynamic | 2 | Hidden | 12 | 0.85 |
+| η Anti-Algo | C | Split / Stage | Dynamic | 2-3 | Visible | 0 | 0.50 |
+
+**Lost Maxi · Atelier signature** (always α): Bilingual = A · Hierarchy / Quiet Section = Visible / Tonal Accents 1-2 / Layout = Stage for capsule reveals. Do not deviate from these for atelier surfaces.
+
+**Static UI kit scope** for any flagship showcase defaults to **ALL components** (buttons / form fields / navigation / cards / status chips / modals & sheets / tables / bilingual title patterns). Do not narrow to a single component group.
 
 ---
 

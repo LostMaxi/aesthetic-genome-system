@@ -12,17 +12,19 @@ A bilingual (繁中 / EN), principled design system built on three layers:
 
 ---
 
-## Sources
+## Repo contents
 
-All original specification files preserved at `source/`:
+This v5.0 repo bundles the operational design system:
 
-- `source/README.md` · top-level overview
-- `source/SKILL.md` · skill definition
-- `source/families.md` · full genotypes for α–η
-- `source/ctsm-parameters.md` · Four-Bases numeric ranges
-- `source/bilingual-typography.md` · ZH/EN as topological element
-- `source/families/*.json` · machine-readable genotype tokens
-- `source/package.json` · brand manifest
+- `SKILL.md` — Claude-skill entry point with hard constraints and family-canonical defaults
+- `README.md` — this file (brand context, atelier drop series, visual foundations)
+- `kit-dimensions.md` — 12-axis construction kit + Cinematic Vista RENDER templates
+- `colors_and_type.css` — design tokens + semantic type + WOFF2 @font-face declarations
+- `fonts/` — 15 brand fonts as WOFF2 (Yu Gothic Light excluded for Microsoft license)
+- `CHANGELOG.md` — version history
+- `FILE_PATCHES.md` — line-level upgrade patches from v4.0
+
+Family genotype JSON files, per-family CTSM parameter tables, and the Family Explorer reference UI kit are not bundled in v5.0 — design-token signatures for each family (α-η) are documented inline below under "VISUAL FOUNDATIONS" and SKILL.md's Family-canonical defaults table.
 
 ---
 
@@ -50,7 +52,7 @@ Anti-Convergence Engine                 ── Perturbation — 2 of 6 operators
 | ζ | 動態表現 Dynamic | 能量的視覺化 | Nike · Spotify · Discord |
 | η | 抗演算法 Anti-Algo | 對光滑的叛逆 | A24 · Brutalist Web |
 
-Each family ships as a JSON genotype at `source/families/{family}.json` with its own Σ / Λ / Φ / CTSM coordinates and font assignment.
+Each family's design-token signature (canonical font, radii, easing, density, motion speed, bilingual mode, shadow system) is documented in detail under "VISUAL FOUNDATIONS" below, and summarized in SKILL.md's Family-canonical defaults table.
 
 ---
 
@@ -93,7 +95,30 @@ When Scene Mode = Cinematic Vista, choose a sub-flavor:
 - **Cosmic** — deep space / planetary orbit. No fog, starfield 8000-15000, planet/moon backdrop, no god-rays, bloom 1.2.
 - **Free** — agent decides based on context.
 
-See `kit-dimensions.md` for full RENDER ARCHITECTURE template per sub-flavor.
+See `kit-dimensions.md` for full RENDER ARCHITECTURE template per sub-flavor. The Hall sub-flavor's primary aesthetic aspiration is Denis Villeneuve's cinematic language (Blade Runner 2049 / Arrival / Dune / Sicario) — see kit-dimensions.md Hall section for specific film anchors.
+
+---
+
+## Atelier Drop series — material continuity (Lost Maxi · Atelier specific)
+
+When generating prototypes for **Lost Maxi · Atelier** (Atelier marketing site / Capsule Reveal / Annual Reverie surfaces), follow the established Drop series:
+
+| Drop | Title | Material | Sub-flavor |
+|--|--|--|--|
+| 02 | FIELD STILL · 場份 | 水晶 · crystal | (early; pre-12-axis kit) |
+| 03 | SUBMERSE · 沒入 | 炭岩石片 + 鳶尾 · charred rock slate with iris bloom | Cinematic Vista — Liquid |
+| 04 | Theia Apex · 阿派克斯 | 月球橄欖石球 · lunar olivine sphere | Cinematic Vista — Lunar |
+
+**Material trajectory**: dark sculpted minerals paired with one organic fragility per piece. Each Drop is a numbered (typically 24 / 24 or 60 / 60), atelier-signed object with restrained narrative voice.
+
+**New work in this series should**:
+- Use materials in the dark mineral / weathered stone / cast metal / volcanic glass family
+- Pair with one organic fragility (dried plant / mineral relic / ash residue / single insect / etc.)
+- Maintain numbered rarity logic (typically 24 editions for prototype-grade pieces)
+- Use Greek-letter prefixes (Σ Λ Φ η) in metadata
+- Avoid: shiny new metal, clear plastics, smooth synthetic surfaces, anything industrial-modern that could pass for current consumer product
+
+This continuity applies to **Atelier marketing site / Capsule Reveal** surface only. Other surfaces (Family Explorer, Documentation, Editorial) follow general AGS rules without Drop continuity.
 
 ---
 
@@ -101,16 +126,13 @@ See `kit-dimensions.md` for full RENDER ARCHITECTURE template per sub-flavor.
 
 | File | Purpose |
 |---|---|
-| `README.md` | this file |
-| `SKILL.md` | Claude-skill entry point — cross-compatible with Agent Skills |
-| `kit-dimensions.md` | 12-axis construction kit + Cinematic Vista RENDER templates |
-| `colors_and_type.css` | design tokens + semantic type styles |
-| `fonts/README.md` | font substitution notes |
-| `source/` | original specification documents |
-| `preview/` | Design-System-tab preview cards |
-| `ui_kits/explorer/` | UI kit: AGS Family Explorer |
-| `assets/` | logo mark, wordmark, grid pattern |
-| `fonts/` | five brand instruments installed locally |
+| `README.md` | this file — brand context, atelier drop series, visual foundations |
+| `SKILL.md` | Claude-skill entry point — workflow, hard constraints, family-canonical defaults |
+| `kit-dimensions.md` | 12-axis construction kit + Cinematic Vista RENDER templates per sub-flavor |
+| `colors_and_type.css` | design tokens + semantic type + WOFF2 @font-face declarations |
+| `CHANGELOG.md` | version history (v4.0 → v5.0 → v5.0.1) |
+| `FILE_PATCHES.md` | line-level upgrade patches from v4.0 |
+| `fonts/` | 15 brand fonts as WOFF2 (Yu Gothic Light excluded — Microsoft license) |
 
 ---
 
@@ -162,7 +184,9 @@ The composition proportion (cool ~80% / accent ~15% / whitespace ~5%) is a layou
 - `精密中的溫度 / precision + warmth` (β DNA)
 - `當一件事物被做到極致，它就消失了。` (α principle)
 
-**Never use:** "leverage", "unleash", "reimagine", "journey", "elevate", "seamless", "next-generation", "100%", "閉環", "已搞定", "完美收官". These are the tropes AGS is engineered against.
+**Never use in en**: leverage / unleash / reimagine / journey / elevate / seamless / next-generation / finalized / 100% / shipped / done / 閉環. These are the tropes AGS is engineered against.
+
+**Never use in zh**: 賦能 / 打造 / 極致 / 嶄新 / 全新 / 重新定義 / 引領 / 革命性 / 顛覆 / 一站式 / 沉浸式體驗 / 匠心 / 精雕細琢 / 引爆 / 已搞定 / 完美收官. The standard AI-slop and marketing-speak tropes — engineered against.
 
 ---
 
@@ -310,6 +334,6 @@ When generating single-file HTML prototypes for direct hosting / `file://` use:
 </body>
 ```
 
-Pick a family → load its JSON from `source/families/` → let it set your `--font-*`, `--r-*`, `--dur-*`, `--ease-*` variables for that composition.
+Pick a family → set its canonical defaults from SKILL.md's "Family-canonical defaults" table → use that to set your `--font-*`, `--r-*`, `--dur-*`, `--ease-*` variables for that composition.
 
 For immersive prototypes, layer the 12-axis construction kit on top (see `kit-dimensions.md`).
